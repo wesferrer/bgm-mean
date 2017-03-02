@@ -39,14 +39,14 @@ Promise.all(promises).then(() =>
         name: 'Clank!',
         publisher: 'Renegade Games',
         year: 2016,
-        image: '',
+        image: 'https://cf.geekdo-images.com/images/pic3056966.jpg',
         plays: [plays[0]._id, plays[1]._id]
       },
       {
         name: 'Gloomhaven',
         publisher: 'Cephalofair',
         year: 2017,
-        image: '',
+        image: 'https://cf.geekdo-images.com/images/pic2437871.jpg',
         plays: []
       }
     ]);

@@ -19,6 +19,8 @@ function NewGameController($http, $state, Game, SearchService) {
         image: g.image,
       }).$promise.then(game => {
         $state.go('game-detail', {id: game._id});
+      }).catch(game => {
+        alert(game);
       });
     });
     // Game.save({text: vm.newGame}, function(Game) {
