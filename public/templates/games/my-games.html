@@ -1,0 +1,14 @@
+<div class="row">
+  <h2>My Games</h2>
+  <button ng-click="myGamesCtrl.goToNewGame()">Add New Game</button>
+</div>
+<ul class="collection">
+  <li ng-repeat="game in myGamesCtrl.games track by $index" class="collection-item">
+    <div>
+      <img ng-src="{{game.image}}">
+      <h4>{{game.name}}</h4>
+      <a ng-click="myGamesCtrl.delGame(game)" class="secondary-content"><i class="material-icons">delete</i></a>
+    </div>
+  </li>
+</ul>
+<h4 ng-hide="myGamesCtrl.games.length" class="center-align">You have no games! Add some games!</h4>

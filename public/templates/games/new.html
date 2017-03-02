@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>New Game</h2>
+  <div class="col s12">
+    <form ng-submit="NewGameCtrl.doSearch(NewGameCtrl.search)">
+      <input type="text" ng-model="NewGameCtrl.search">
+      <button class="waves-effect waves-light btn ">Search</button>
+    </form>
+  </div>
+
+  <div class="row" ng-show="NewGameCtrl.games">
+    <div ng-repeat="game in NewGameCtrl.games.data.result.items.item">
+      <!-- <div class="col s12">
+        {{game}}
+      </div> -->
+      <div class="col s12">
+         <h2 class="header">Games</h2>
+         <div class="card horizontal">
+           <div class="card-image">
+             <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/1269-200.png">
+           </div>
+           <div class="card-stacked">
+             <div class="card-content">
+               <p>{{game.name[0]['$'].value}} ({{game.yearpublished[0]['$'].value}})</p>
+             </div>
+             <div class="card-action">
+               <button style="cursor: pointer;" ng-click="NewGameCtrl.addGame(game)">Add to collection</button>
+             </div>
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>

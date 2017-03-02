@@ -1,11 +1,9 @@
 var mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
-mongoose.connect(process.env.DATABASE_URL);
+var db = mongoose.connect(process.env.DATABASE_URL);
+var con = db.connection;
 
-// database connection event
-mongoose.connection.once('open', function () {
-  console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
+con.on('open', function() {
+  console.log(`Connected to database ${con.name} at ${con.host}:${con.port}`);
 });
-
-module.exports = mongoose;
