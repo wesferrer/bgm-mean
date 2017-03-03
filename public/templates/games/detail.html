@@ -1,4 +1,4 @@
-<h2>{{GameDetailCtrl.game.name}}</h2>
+<h2 class="center-align white-text">{{GameDetailCtrl.game.name}}</h2>
 <div class="row">
   <div class="col l4">
     <img ng-src="{{GameDetailCtrl.game.image}}" width="300">
@@ -10,5 +10,30 @@
   </div>
   <div class="col l4">
     <h5>Plays</h5>
+      <div ng-repeat="play in GameDetailCtrl.game.plays">
+        <h3>{{play.date | date}}</h3>
+        <ul>
+          <li ng-repeat="player in play.players">{{player.name}}</li>
+        </ul>
+      </div>
+      <button class="waves-effect waves-light btn" ng-click="GameDetailCtrl.newPlay()">New Play</button>
   </div>
 </div>
+
+
+<!--
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div> -->

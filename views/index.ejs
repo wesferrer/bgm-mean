@@ -33,7 +33,6 @@
             <li>&nbsp;&nbsp;<a ui-sref="home" class="left brand-logo">Your Play</a></li>
           </ul>
           <ul class="right">
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="new-play"><span class="glyphicon glyphicon-edit"><i class="material-icons">add_box</i></span></a></li>
             <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="my-games"><span><i class="material-icons">security</i></span></a></li>
             <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-out-dropdown"><i class="material-icons right">perm_identity</i></a></li>
             <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-in-dropdown"><i class="material-icons right">perm_identity</i></a></li>
@@ -46,6 +45,7 @@
 
     <script src="/javascripts/app.js"></script>
     <script src="/javascripts/services/auth-interceptor.js"></script>
+    <script src="/javascripts/services/play-service.js"></script>
     <script src="/javascripts/services/token-service.js"></script>
     <script src="/javascripts/services/user-service.js"></script>
     <script src="/javascripts/services/game-service.js"></script>

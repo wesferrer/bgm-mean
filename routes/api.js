@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var gameCtrl = require('../controllers/games');
 var userCtrl = require('../controllers/users');
+var playCtrl = require('../controllers/plays');
 
 // Public routes (no auth required)
 router.post('/users/login', userCtrl.login);
@@ -22,5 +23,10 @@ router.delete('/games/:id', gameCtrl.deleteGame);
 router.get('/search', gameCtrl.searchGames);
 router.post('/games', gameCtrl.addGameToDB);
 router.get('/games/:id', gameCtrl.getGame);
+
+//play routes
+router.get('/plays/user', playCtrl.userPlays);
+router.post('/plays', playCtrl.createPlay);
+//router.post('/plays', playCtrl.createPlay);
 
 module.exports = router;

@@ -1,14 +1,14 @@
-<div class="row">
-  <h2>Games</h2>
-  <button ng-click="myGamesCtrl.goToNewGame()">Add New Game</button>
-</div>
-<ul class="collection">
-  <li ng-repeat="game in myGamesCtrl.games track by $index" class="collection-item">
-    <div>
-      <img ng-src="{{game.image}}">
-      <h4>{{game.name}}</h4>
-      <a ng-click="myGamesCtrl.delGame(game)" class="secondary-content"><i class="material-icons">delete</i></a>
+<div class="container">
+  <div class="row">
+    <div class="col m12">
+      <h2 class="center-align">Games</h2>
+      <button ng-click="myGamesCtrl.goToNewGame()" class="waves-effect waves-light btn ">Add New Game</button>
     </div>
-  </li>
-</ul>
-<h4 ng-hide="myGamesCtrl.games.length" class="center-align">There are no games! Add some games!</h4>
+    <div class="collection col m3" ng-repeat="game in myGamesCtrl.games track by $index" ui-sref="game-detail({id: game._id})">
+      <p><strong>{{game.name}}</strong></p>
+      <img ng-src="{{game.image}}" width="200" height="200">
+    </div>
+  </div>
+</div>
+
+<!--

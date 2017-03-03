@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>New Game</h2>
+  <h2 class="white-text center-align">New Game</h2>
   <div class="col s12">
     <form ng-submit="NewGameCtrl.doSearch(NewGameCtrl.search)">
       <input type="text" ng-model="NewGameCtrl.search">
@@ -20,10 +20,10 @@
            </div>
            <div class="card-stacked">
              <div class="card-content">
-               <p>{{game.name[0]['$'].value}} ({{game.yearpublished[0]['$'].value}})</p>
+               <p id="results">{{game.name[0]['$'].value}} ({{game.yearpublished[0]['$'].value}})</p>
              </div>
-             <div class="card-action">
-               <button style="cursor: pointer;" ng-click="NewGameCtrl.addGame(game)">Add to collection</button>
+             <div class="card-action center-align">
+               <button class="waves-effect waves-light btn" style="cursor: pointer;" ng-click="NewGameCtrl.addGame(game)">Add to collection</button>
              </div>
            </div>
          </div>

@@ -23,14 +23,16 @@ Promise.all(promises).then(() =>
       date: new Date(),
       players: [{name: 'Jim', score: 20, winner: false, newPlayer: true}, {name: 'Wes', score: 30, winner: true, newPlayer: false}],
       location: 'Pair a Dice',
-      comments: ['boys rule', 'girls drool']
+      comments: ['boys rule', 'girls drool'],
+      game: mongoose.Types.ObjectId('58b86ca37cc636f45a21aed2')
     },
     {
       user: mongoose.Types.ObjectId('58b5efc66e54f3db3e9230fb'),
       date: new Date(),
       players: [{name: 'James', score: 22, winner: true, newPlayer: true}, {name: 'Wes', score: 12, winner: false, newPlayer: false}],
       location: 'Home',
-      comments: ['boys rule', 'girls drool']
+      comments: ['boys rule', 'girls drool'],
+      game: mongoose.Types.ObjectId('58b86ca37cc636f45a21aed1')
     }
   ]);
 }).then(plays => {

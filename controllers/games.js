@@ -9,7 +9,8 @@ module.exports = {
   getGamesForUser,
   searchGames,
   addGameToDB,
-  getGame
+  getGame,
+  playsForUser
 };
 
 function getAllGames(req, res, next) {
@@ -19,7 +20,7 @@ function getAllGames(req, res, next) {
 }
 
 function getGame(req, res, next) {
-  Game.findById(req.params.id).then(game => {
+  Game.findById(req.params.id).populate('plays').exec().then(game => {
     res.json(game);
   }).catch(err => res.status(500).json(err));
 }
@@ -31,7 +32,10 @@ function deleteGame(req, res, next) {
 }
 
 function getGamesForUser(req, res, next) {
-  Game.find({}).populate('plays').exec().then(games => {
+  Game.find({}).populate({
+      path: 'plays',
+      match: { user: req.user._id }
+    }).exec().then(games => {
     games = games.filter(game => game.plays.some(play => play.user.equals(req.user._id)));
     console.log(games)
     res.json(games);
@@ -61,11 +65,15 @@ function addGameToDB(req, res, next) {
     } else {
       res.status(400).json('game already exists');
     }
-  })
-
+  });
   // Game.create(req.body).then(function(game){
   //  res.status(201).json(game);
   // });
 }
 
+function playsForUser(req, res, next) {
+ Play.find({user: req.user._id}, function(err, plays) {
+   res.status(200).json(plays);
+ });
+}
 

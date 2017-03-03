@@ -15,6 +15,12 @@ function runBlock($rootScope, $state, UserService) {
   });
 }
 
+
+angular.module('app').config(['$qProvider', function ($qProvider) {
+  // handles the possibly rejected promise error
+  $qProvider.errorOnUnhandledRejections(false);
+}]);
+
 configRoutes.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
 function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -58,7 +64,7 @@ function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
     })
 
     .state('new-play', {
-      url: '/new-play',
+      url: '/new-play/:id',
       templateUrl: 'templates/play/new-play.html',
       controller: 'NewPlayController as NewPlayCtrl'
     })

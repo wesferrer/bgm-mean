@@ -13,6 +13,8 @@ function MyGamesController(Game, $state) {
   //     vm.games.splice(vm.games.findIndex(t => t._id === game._id), 1);    });
   // };
 
+  console.log(vm.games);
+
   vm.goToNewGame = function() {
     console.log('********')
     $state.go('new-game');

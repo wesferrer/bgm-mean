@@ -10,4 +10,25 @@ nav {
   background-color: #1b5e20;
 }
 
+body {
+  background: url(http://i.imgur.com/5ruk1lx.jpg);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
 
+body::after {
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+}
+
+* {
+  color: white;
+}
+
+#results {
+  color: black;
+}

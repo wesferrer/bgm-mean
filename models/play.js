@@ -6,7 +6,7 @@ var playerSchema = new Schema ({
   name: String,
   score: Number,
   winner: {type: Boolean, default: false},
-  newPlayer: Boolean
+  newPlayer: { type: Boolean, default: true}
 });
 
 var playSchema = new Schema({
@@ -15,6 +15,7 @@ var playSchema = new Schema({
   players: [playerSchema],
   location: String,
   comments: [String],
+  game: {type: Schema.Types.ObjectId, ref: 'Game'}
 });
 
 playSchema.methods.getWinner = function() {

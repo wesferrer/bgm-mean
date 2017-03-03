@@ -1,1 +1,55 @@
-<h1>new play biotch</h1>
+<h2 class="center-align">Game Name - New Play</h2>
+<div class="row">
+  <div class="col m6">
+    <div class="card green darken-4">
+      <div class="card-content white-text">
+        <span class="card-title">Players</span>
+        <div class="row">
+          <div class="input-field col s6">
+            <input ng-model="NewPlayCtrl.play.p1name" placeholder="First Player" id="player1" type="text" class="validate">
+            <label for="first_name">First Player</label>
+          </div>
+          <div class="input-field col s6">
+            <input ng-model="NewPlayCtrl.play.p1score" placeholder="Score" id="player1" type="Number" class="validate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input ng-model="NewPlayCtrl.play.p2name"  placeholder="Second Player" id="player2" type="text" >
+            <label for="first_name">Second Player</label>
+          </div>
+          <div class="input-field col s6">
+            <input ng-model="NewPlayCtrl.play.p2score"  placeholder="Score" id="player2" type="Number" >
+          </div>
+        </div>
+        <div class="input-field col s6">
+          <input ng-model="NewPlayCtrl.play.p3name"  placeholder="Third Player" id="player3" type="text">
+          <label for="first_name">Third Player</label>
+        </div>
+        <div class="input-field col s6">
+          <input  ng-model="NewPlayCtrl.play.p3score" placeholder="Score" id="player3" type="Number">
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input ng-model="NewPlayCtrl.play.p4name"  placeholder="Fourth Player" id="player4" type="text">
+            <label for="first_name">Fourth Player</label>
+          </div>
+          <div class="input-field col s6">
+            <input ng-model="NewPlayCtrl.play.p4score" placeholder="Score" id="player4" type="Number">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container col m6 ">
+    <div class="card green darken-4">
+        <div class="card-content white-text">
+        <span class="card-title">More Info</span>
+          <input ng-model="NewPlayCtrl.play.date" type="date" name="Date" placeholder="Date">
+          <input ng-model="NewPlayCtrl.play.location" type="text" name="Location" placeholder="Location">
+        </div>
+    </div>
+  </div>
+
+<a href="" ng-click="NewPlayCtrl.savePlay()" class="waves-effect waves-light btn">Add Game</a>
+
