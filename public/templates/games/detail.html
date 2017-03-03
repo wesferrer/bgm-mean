@@ -1,22 +1,33 @@
-<h2 class="center-align white-text">{{GameDetailCtrl.game.name}}</h2>
+<h2 class="center-align card-panel green">{{GameDetailCtrl.game.name}}</h2>
 <div class="row">
-  <div class="col l4">
-    <img ng-src="{{GameDetailCtrl.game.image}}" width="300">
+  <div class="card green">
+    <div class="col m4 l4">
+      <img ng-src="{{GameDetailCtrl.game.image}}" width="300">
+    </div>
   </div>
-  <div class="col l4">
-    <h5>Details</h5>
-    <p>Publisher: {{GameDetailCtrl.game.publisher}}
-    <p>Year: {{GameDetailCtrl.game.year}}</p>
-  </div>
-  <div class="col l4">
-    <h5>Plays</h5>
-      <div ng-repeat="play in GameDetailCtrl.game.plays">
-        <h3>{{play.date | date}}</h3>
-        <ul>
-          <li ng-repeat="player in play.players">{{player.name}}</li>
-        </ul>
+    <div>
+      <div class="col s12 m4 l4">
+        <div class="card-panel green">
+        <h5>Details</h5>
+        <p>Publisher: {{GameDetailCtrl.game.publisher}}
+        <p>Year: {{GameDetailCtrl.game.year}}</p>
+        </div>
       </div>
-      <button class="waves-effect waves-light btn" ng-click="GameDetailCtrl.newPlay()">New Play</button>
+    </div>
+  <div>
+    <div class="col m4 l4">
+      <div class="card-panel green">
+        <h5>Plays</h5>
+        <div ng-repeat="play in GameDetailCtrl.game.plays">
+          <h6>{{play.date | date}}</h6>
+          <ul>
+            <li ng-repeat="player in play.players">{{player.name}}</li>
+            <!-- <li ng-repeat="score in play.players">{{player.score</li> -->
+          </ul>
+        </div>
+        <button class="waves-effect waves-light btn" ng-click="GameDetailCtrl.newPlay()">New Play</button>
+      </div>
+    </div>
   </div>
 </div>
 

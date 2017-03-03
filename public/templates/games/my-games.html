@@ -1,14 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col m12">
-      <h2 class="center-align">Games</h2>
-      <button ng-click="myGamesCtrl.goToNewGame()" class="waves-effect waves-light btn ">Add New Game</button>
-    </div>
-    <div class="collection col m3" ng-repeat="game in myGamesCtrl.games track by $index" ui-sref="game-detail({id: game._id})">
-      <p><strong>{{game.name}}</strong></p>
-      <img ng-src="{{game.image}}" width="200" height="200">
+<div class="row">
+  <div class="col m12">
+  <h2 class="center-align card-title">Games</h2>
+  <p ng-click="myGamesCtrl.goToNewGame()" class="btn">Add New Game</p>
+    <div class="card green darken-6">
+      <div class="card-content col m3" ng-repeat="game in myGamesCtrl.games track by $index" ui-sref="game-detail({id: game._id})">
+        <p><strong>{{game.name}}</strong></p>
+        <img ng-src="{{game.image}}" width="200" height="200">
+      </div>
+      <div class="row">
+        <div class="card-action">
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<!--
